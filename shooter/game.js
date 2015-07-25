@@ -10,7 +10,7 @@ function preload() {
 
 var diamonds_ship;
 function create () {
- diamonds_ship = game.add.sprite(400,550,'diamonds_ship');
+ diamonds_ship = game.add.sprite(100,1000,'diamonds_ship');
  }
 
 function update() {
