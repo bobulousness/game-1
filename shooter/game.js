@@ -3,29 +3,30 @@
 var game = new Phaser.Game(800,600,Phaser.AUTO,'game',
   {preload:preload,create:create,update:update,render:render});
 
-var diamonds_ship;
+var diaship;
 var cursors;
 var strsky;
 
-function preload() 
-  game.load.image('strsky', 'strsky.gif');
-  game.load.image('diamonds_ship','diamond_ship.gif');
+function preload(){ 
+  game.load.image('strsky','strsky.gif');
+  game.load.image('diaship','diamond_ship.gif');
 }
 
 function create () {
- diamonds_ship = game.add.sprite(20,300,'diamonds_ship');
- game.physics.enable(diamonds_ship, Phaser.Physics.ARCADE);
+ strsky = game.add.tileSprite(0,0,800,600,'strsky');
+ diaship = game.add.sprite(20,300,'diaship');
+ game.physics.enable(diaship, Phaser.Physics.ARCADE);
  cursors = game.input.keyboard.createCursorKeys();
  }
 
 function update() {
-  diamonds_ship.body.velocity.x = 0;
-  diamonds_ship.body.velocity.y = 0;
+  diaship.body.velocity.x = 0;
+  diaship.body.velocity.y = 0;
   if (cursors.up.isDown) {
-      diamonds_ship.body.velocity.y = -300;
+      diaship.body.velocity.y = -300;
     }
   else if (cursors.down.isDown) {
-    diamonds_ship.body.velocity.y = 300;
+    diaship.body.velocity.y = 300;
     }
 }
 
